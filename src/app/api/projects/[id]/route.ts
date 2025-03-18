@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
       "Endura Fit helps users track workouts and find exercise routines. It integrates with RapidAPI to fetch real-time fitness data and tutorials.",
     image: "/assets/endura.png",
     technology: "React.js, Tailwind CSS, RapidAPI, Material UI",
-    live_link: "https://endura-fit.vercel.app/"
+    live_link: "https://endura-fit.vercel.app/",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const projects = [
       "Spectra Reality is a modern landing page tailored for developers and digital businesses.",
     image: "/assets/spectra.png",
     technology: "React.js, Tailwind CSS",
-    live_link: "https://spectra-reality.vercel.app/"
+    live_link: "https://spectra-reality.vercel.app/",
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const projects = [
       "Serrena is a React-powered e-commerce platform offering a seamless shopping experience.",
     image: "/assets/serrena.png",
     technology: "React.js, Tailwind CSS",
-    live_link: "https://serrenna.vercel.app/"
+    live_link: "https://serrenna.vercel.app/",
   },
   {
     id: 4,
@@ -39,7 +40,7 @@ const projects = [
       "Watch Wave fetches and displays content from the YouTube API with a fast UI built on Vite.",
     image: "/assets/wave.png",
     technology: "React.js, YouTube API, Tailwind CSS, Vite, Material UI",
-    live_link: "https://watch-waves.vercel.app/"
+    live_link: "https://watch-waves.vercel.app/",
   },
   {
     id: 5,
@@ -49,12 +50,18 @@ const projects = [
       "Task Master is a to-do app that retains tasks even after refreshing using local storage.",
     image: "/assets/task.png",
     technology: "React.js, Tailwind CSS, Local Storage",
-    live_link: "https://task-masterrs.vercel.app/"
+    live_link: "https://task-masterrs.vercel.app/",
   },
 ];
 
-export async function GET(req, { params }) {
-  const { id } = params;
+interface Params {
+  params: { id: string };
+}
+
+export async function GET(req: NextRequest, context: Params) {
+  // ✅ Await the params
+  const { id } = await context.params;
+
   const project = projects.find((proj) => proj.id === parseInt(id));
 
   if (!project) {
