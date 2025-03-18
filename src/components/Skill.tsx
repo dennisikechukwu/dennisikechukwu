@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Braces, Brush, Database, Layers, Package } from "lucide-react";
+import { Code, Braces, Brush, Layers, Package } from "lucide-react";
 
 const skills = [
     {

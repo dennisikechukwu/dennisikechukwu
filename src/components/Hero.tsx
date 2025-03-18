@@ -13,7 +13,7 @@ const Hero = () => {
             height={180}
             className='rounded-full border-[2px] border-[#6b6868] transition-transform duration-300 group-hover:scale-110 max-sm:w-[120px] max-sm:h-[120px]'
           />
-           <h2 className="text-lg md:text-3xl font-semibold text-white font-serif">Hi, I'm Ikechukwu Dennis.</h2>
+           <h2 className="text-lg md:text-3xl font-semibold text-white font-serif">Hi, I am Ikechukwu Dennis.</h2>
         </div>
         <div className="items-center space-x-2 mt-2 hidden md:flex ">
                 <span className="w-5 h-5 bg-green-400 rounded-full"></span>
