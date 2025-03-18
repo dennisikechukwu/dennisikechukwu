@@ -54,12 +54,13 @@ const projects = [
   },
 ];
 
-export async function GET(
-  req: NextRequest,
-  context: { params: { id: string } }
-) {
-  // Sync access (NO AWAIT)
-  const { id } = context.params;
+interface Params {
+  params: { id: string };
+}
+
+export async function GET(req: NextRequest, context: Params) {
+  // ✅ Await the params
+  const { id } = await context.params;
 
   const project = projects.find((proj) => proj.id === parseInt(id));
 
