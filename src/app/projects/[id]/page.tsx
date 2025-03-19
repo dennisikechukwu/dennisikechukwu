@@ -63,7 +63,7 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const projectId = Number(id);
   const project = localProjects.find((proj) => proj.id === projectId);
-  const [shuffle, setShuffle] = useState([]);
+  const [shuffle, setShuffle] = useState<Array<typeof localProjects[number]>>([]);
 
   useEffect(() => {
     const filteredProjects = localProjects.filter((proj) => proj.id !== projectId);
