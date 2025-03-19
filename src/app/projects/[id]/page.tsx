@@ -15,6 +15,7 @@ const localProjects = [
       "Endura Fit helps users track workouts and find exercise routines. It integrates with RapidAPI to fetch real-time fitness data and tutorials.",
     image: "/assets/endura.png",
     technology: "React.js, Tailwind CSS, RapidAPI, Material UI",
+    live_link: "https://endura-fit.vercel.app/",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const localProjects = [
       "Spectra Reality is a modern landing page tailored for developers and digital businesses.",
     image: "/assets/spectra.png",
     technology: "React.js, Tailwind CSS",
+    live_link: "https://spectra-reality.vercel.app/",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const localProjects = [
       "Serrena is a React-powered e-commerce platform offering a seamless shopping experience.",
     image: "/assets/serrena.png",
     technology: "React.js, Tailwind CSS",
+    live_link: "https://serrenna.vercel.app/",
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const localProjects = [
       "Watch Wave fetches and displays content from the YouTube API with a fast UI built on Vite.",
     image: "/assets/wave.png",
     technology: "React.js, YouTube API, Tailwind CSS, Vite, Material UI",
+    live_link: "https://watch-waves.vercel.app/",
   },
   {
     id: 5,
@@ -51,51 +55,28 @@ const localProjects = [
       "Task Master is a to-do app that retains tasks even after refreshing using local storage.",
     image: "/assets/task.png",
     technology: "React.js, Tailwind CSS, Local Storage",
+    live_link: "https://task-masterrs.vercel.app/",
   },
 ];
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const projectId = Number(id);
+  const project = localProjects.find((proj) => proj.id === projectId);
   const [shuffle, setShuffle] = useState([]);
 
   useEffect(() => {
-    fetch(`/api/projects/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          setProject(null);
-        } else {
-          setProject(data);
-        }
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [id]);
-
-  useEffect(() => {
-    // Exclude the current project
-    const filteredProjects = localProjects.filter((proj) => proj.id !== Number(id));
-
-    // Shuffle and pick 2 random projects
+    const filteredProjects = localProjects.filter((proj) => proj.id !== projectId);
     const shuffled = filteredProjects.sort(() => Math.random() - 0.5).slice(0, 2);
-
     setShuffle(shuffled);
-  }, [id]);
-
-  if (loading) {
-    return <div className="text-white text-center mt-10">Loading...</div>;
-  }
+  }, [projectId]);
 
   if (!project) {
     return (
       <div className="text-center text-white mt-10">
         <h2 className="text-2xl">Project Not Found</h2>
         <Link href="/">
-          <button className="mt-4 bg-blue-600 px-4 py-2 rounded">
-            Back to Home
-          </button>
+          <button className="mt-4 bg-blue-600 px-4 py-2 rounded">Back to Home</button>
         </Link>
       </div>
     );
@@ -107,10 +88,10 @@ const ProjectDetail = () => {
       <div className="mt-3 bg-[#151414] p-7 rounded-md">
         <h1 className="text-center text-lg md:text-4xl text-[#cec9c9] font-semibold font-sans">{project.name}</h1>
         <p className="text-center text-lg mt-4 text-[#cec9c9]">{project.desc}</p>
-        <div className="flex justify-center items-center mt-5 p-4 hover:border-[1.4px]  rounded-md hover:border-[#737375] transition-all">
+        <div className="flex justify-center items-center mt-5 p-4 hover:border-[1.4px] rounded-md hover:border-[#737375] transition-all">
           <Image
             src={project.image}
-            alt="image"
+            alt={project.name}
             width={300}
             height={450}
             className="w-full rounded-md md:h-[500px]"
@@ -138,18 +119,15 @@ const ProjectDetail = () => {
 
       {/* More Projects Section */}
       <div className="mt-3 rounded-lg bg-[#151414] p-4">
-        <h1 className="px-5 py-2 text-xl text-[#eae6e6] font-serif">
-          More Projects
-        </h1>
-        <div className="flex flex-wrap justify-center ">
+        <h1 className="px-5 py-2 text-xl text-[#eae6e6] font-serif">More Projects</h1>
+        <div className="flex flex-wrap justify-center">
           {shuffle.map((proj) => (
             <Link key={proj.id} href={`/projects/${proj.id}`} className="p-4 text-white rounded-lg cursor-pointer">
-              <Image src={proj.image} alt={proj.name} width={430} height={600} className="h-52 max-sm:h-48 rounded-tl-md rounded-tr-md "/>
+              <Image src={proj.image} alt={proj.name} width={430} height={600} className="h-52 max-sm:h-48 rounded-tl-md rounded-tr-md" />
               <div className="p-3 bg-[#2d2b2b] rounded-bl-md rounded-br-md">
-              <h2 className="text-xl font-bold mt-2 text-[white] font-sans">{proj.name}</h2>
-              <p className="text-[white] font-sans mt-2">{proj.desc}</p>
+                <h2 className="text-xl font-bold mt-2 text-[white] font-sans">{proj.name}</h2>
+                <p className="text-[white] font-sans mt-2">{proj.desc}</p>
               </div>
-              
             </Link>
           ))}
         </div>

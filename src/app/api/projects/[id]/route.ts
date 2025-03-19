@@ -1,7 +1,6 @@
-import { NextResponse } from "next/server";
-import { NextRequest } from "next/server";
 
-const projects = [
+
+ export const projects = [
   {
     id: 1,
     name: "Endura Fit",
@@ -53,20 +52,3 @@ const projects = [
     live_link: "https://task-masterrs.vercel.app/",
   },
 ];
-
-interface Params {
-  params: { id: string };
-}
-
-export async function GET(req: NextRequest, context: Params) {
-  // ✅ Await the params
-  const { id } = await context.params;
-
-  const project = projects.find((proj) => proj.id === parseInt(id));
-
-  if (!project) {
-    return NextResponse.json({ error: "Project not found" }, { status: 404 });
-  }
-
-  return NextResponse.json(project);
-}
