@@ -12,9 +12,10 @@ const Nav = () => {
         setOpen(!open);
     }
 
-    function handleMenuClick(link) {
+    // Add string type to link parameter
+    function handleMenuClick(link: string) {
         setActiveLink(link);
-        setOpen(false); // Close the mobile menu after clicking
+        setOpen(false);
     }
 
     return (
