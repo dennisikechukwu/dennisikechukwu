@@ -9,17 +9,17 @@ const Nav = () => {
     const [activeLink, setActiveLink] = useState("");
 
     function toggleNavbar() {
-        setOpen(!open);
+        setTimeout(() => setOpen((prev) => !prev), 50); // Small delay to prevent race conditions
     }
 
-    // Add string type to link parameter
-    function handleMenuClick(link: string) {
+    function handleMenuClick(link: string, e: React.MouseEvent) {
+        e.stopPropagation(); // Prevents unwanted event bubbling
         setActiveLink(link);
         setOpen(false);
     }
 
     return (
-        <nav className="p-6 bg-[#151414] rounded-bl-xl rounded-br-xl  sticky top-0 z-50">
+        <nav className="p-6 bg-[#151414] rounded-bl-xl rounded-br-xl sticky top-0 z-50">
             <div className="flex justify-between items-center text-[#eae4e4]">
                 {/* Logo */}
                 <Link href="/">
@@ -40,7 +40,7 @@ const Nav = () => {
                                 className={`px-4 py-3 rounded-full cursor-pointer ${
                                     activeLink === item.name ? "bg-[#151414]" : "bg-[#242222]"
                                 }`}
-                                onClick={() => handleMenuClick(item.name)}
+                                onClick={(e) => handleMenuClick(item.name, e)}
                             >
                                 {item.name}
                             </span>
@@ -58,7 +58,10 @@ const Nav = () => {
 
             {/* Mobile Menu Dropdown */}
             {open && (
-                <div className="md:hidden mt-4 flex flex-col gap-3 bg-[#151414] p-4 rounded-lg text-center fixed left-0 w-full">
+                <div
+                    key={open ? "open" : "closed"} // Forces fresh render
+                    className="md:hidden mt-4 flex flex-col gap-3 bg-[#151414] p-4 rounded-lg text-center fixed left-0 w-full"
+                >
                     {[
                         { name: "Projects", href: "/#projects" },
                         { name: "Skills", href: "/#skills" },
@@ -69,7 +72,7 @@ const Nav = () => {
                                 className={`block text-white py-2 rounded-md border-[1.5px] border-[#242222] cursor-pointer ${
                                     activeLink === item.name ? "bg-[#2c2b2b]" : ""
                                 }`}
-                                onClick={() => handleMenuClick(item.name)}
+                                onClick={(e) => handleMenuClick(item.name, e)}
                             >
                                 {item.name}
                             </span>
