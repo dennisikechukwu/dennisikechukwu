@@ -60,7 +60,7 @@ const Nav = () => {
             {open && (
                 <div
                     key={open ? "open" : "closed"} // Forces fresh render
-                    className="md:hidden mt-4 flex flex-col gap-3 bg-[#151414] p-4 rounded-lg text-center fixed left-0 w-full"
+                    className="md:hidden mt-4 flex flex-col gap-3 bg-[#151414] p-4 rounded-lg text-center fixed left-0 w-full z-10"
                 >
                     {[
                         { name: "Projects", href: "/#projects" },
