@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className='mt-3 bg-[#151414] p-7 rounded-lg'>
       <div className='flex justify-between items-center'>
-        <div className="group flex gap-6 items-center">
+        <div className="group flex gap-3 md:gap-6 items-center">
           <Image
             src="/assets/dennis.jpg"
             alt="description"
