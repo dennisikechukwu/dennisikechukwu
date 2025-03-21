@@ -88,13 +88,13 @@ const ProjectDetail = () => {
       <div className="mt-3 bg-[#151414] p-7 rounded-md">
         <h1 className="text-center text-lg md:text-4xl text-[#cec9c9] font-semibold font-sans">{project.name}</h1>
         <p className="text-center text-lg mt-4 text-[#cec9c9]">{project.desc}</p>
-        <div className="flex justify-center items-center mt-5 p-4 hover:border-[1.4px] rounded-md hover:border-[#737375] transition-all">
+        <div className="flex justify-center items-center mt-5 p-1 md:p-4 hover:border-[1.4px] rounded-md hover:border-[#737375] transition-all">
           <Image
             src={project.image}
             alt={project.name}
             width={300}
             height={450}
-            className="w-full rounded-md md:h-[500px]"
+            className="w-full rounded-md md:h-[500px] max-sm:h-[230px]"
           />
         </div>
         <div className="mt-5 bg-[#1A1A1A] p-7 rounded-md flex justify-between items-center flex-wrap max-sm:gap-5">
