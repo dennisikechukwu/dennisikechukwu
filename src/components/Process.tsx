@@ -36,15 +36,15 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="mt-3 bg-[#151414] p-7 rounded-lg">
+    <section className="mt-3 bg-black p-7 rounded-lg ">
         <div className='mt-4 lg:mt-7 p-3'>
-        <h2 className="text-white  text-lg lg:text-3xl font-bold text-center mb-6 font-serif">My Front-End Process</h2>
+        <h2 className="text-white  text-xl lg:text-3xl font-bold text-center mb-6 font-sans">My Front-End Process</h2>
         </div>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {steps.map((step) => (
-          <div key={step.step} className="bg-[#151414] p-6 rounded-lg  border-[0.8px] border-[#323232] hover:border-[#494949] transition-all">
-            <h3 className="text-4xl font-bold text-white mb-3">{step.step}</h3>
+          <div key={step.step} className="bg-[#0e0e0e] p-6 rounded-lg  border-[0.8px] border-[#323232] hover:border-[#494949] transition-all">
+            <h3 className="text-4xl font-bold text-white mb-3 font-sans">{step.step}</h3>
             <h4 className="text-xl font-semibold text-white mb-2">{step.title}</h4>
             <p className="text-[#f0eaea]">{step.description}</p>
           </div>

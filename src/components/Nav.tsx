@@ -9,7 +9,7 @@ const Nav = () => {
     const [activeLink, setActiveLink] = useState("");
 
     function toggleNavbar() {
-        setTimeout(() => setOpen((prev) => !prev), 50); // Small delay to prevent race conditions
+        setTimeout(() => setOpen((prev) => !prev), 20); // Small delay to prevent race conditions
     }
 
     function handleMenuClick(link: string, e: React.MouseEvent) {
@@ -19,11 +19,11 @@ const Nav = () => {
     }
 
     return (
-        <nav className="p-6 bg-[#151414] rounded-bl-xl rounded-br-xl sticky top-0 z-50">
+        <nav className="p-6 bg-black rounded-bl-xl rounded-br-xl sticky top-0 z-50">
             <div className="flex justify-between items-center text-[#eae4e4]">
                 {/* Logo */}
                 <Link href="/">
-                    <span className="text-xl font-semibold font-serif bg-gradient-to-r from-[#ffffff] via-[#eae4e4] to-transparent bg-clip-text text-transparent cursor-pointer">
+                    <span className="text-2xl font-semibold font-sans bg-gradient-to-r from-[#ffffff] via-[#eae4e4] to-transparent bg-clip-text text-transparent cursor-pointer">
                         Dennis.I
                     </span>
                 </Link>
@@ -37,8 +37,8 @@ const Nav = () => {
                     ].map((item) => (
                         <Link key={item.name} href={item.href}>
                             <span
-                                className={`px-4 py-3 rounded-full cursor-pointer ${
-                                    activeLink === item.name ? "bg-[#151414]" : "bg-[#242222]"
+                                className={`px-4 py-3 rounded-full cursor-pointer border border-[#a3a2a2] ${
+                                    activeLink === item.name ? "bg-black" : "bg-[#0e0e0e]"
                                 }`}
                                 onClick={(e) => handleMenuClick(item.name, e)}
                             >
@@ -49,7 +49,7 @@ const Nav = () => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="md:hidden flex bg-[#242222] p-2 rounded-full">
+                <div className="md:hidden flex border border-[#a3a2a2] p-1 rounded-full">
                     <button onClick={toggleNavbar} className="w-10 h-10 flex items-center justify-center">
                         {open ? <X className="text-3xl" /> : <Menu className="text-3xl" />}
                     </button>
@@ -60,7 +60,7 @@ const Nav = () => {
             {open && (
                 <div
                     key={open ? "open" : "closed"} // Forces fresh render
-                    className="md:hidden mt-4 flex flex-col gap-3 bg-[#151414] p-4 rounded-lg text-center fixed left-0 w-full z-10"
+                    className="md:hidden mt-4 flex flex-col gap-3 bg-black p-4 rounded-lg text-center fixed left-0 w-full z-10"
                 >
                     {[
                         { name: "Projects", href: "/#projects" },
@@ -70,7 +70,7 @@ const Nav = () => {
                         <Link key={item.name} href={item.href}>
                             <span
                                 className={`block text-white py-2 rounded-md border-[1.5px] border-[#242222] cursor-pointer ${
-                                    activeLink === item.name ? "bg-[#2c2b2b]" : ""
+                                    activeLink === item.name ? "bg-[#0e0e0e]" : ""
                                 }`}
                                 onClick={(e) => handleMenuClick(item.name, e)}
                             >

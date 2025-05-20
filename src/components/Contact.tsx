@@ -2,16 +2,16 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id='contact' className="mt-3 bg-[#151414] p-7 rounded-lg">
-      <p className='text-center lg:text-xl text-lg font-serif text-white mt-5 lg:mt-10'>Get in touch</p>
+    <section id='contact' className="mt-3 bg-black p-7 rounded-lg">
+      <p className='text-center lg:text-2xl text-xl font-sans text-white mt-5 lg:mt-10'>Get in touch</p>
       <div className='mt-4'>
-        <p className='text-4xl max-sm:text-2xl lg:text-6xl text-center font-semibold text-white'>Need A Game Changing</p>
-        <p className='text-center text-white lg:text-2xl text-xl'>Website?</p>
+        <p className='text-4xl max-sm:text-2xl lg:text-6xl text-center font-semibold text-white font-sans'>Need A Game Changing</p>
+        <p className='text-center text-white lg:text-2xl text-xl font-sans'>Website?</p>
 
         {/* Contact Me Button */}
         <div className='mt-5 lg:mt-8 flex justify-center'>
           <a href="mailto:okwuchukwudennis001@gmail.com">
-            <button className='py-3 px-4 bg-[#d4d0d0] text-black rounded-full font-sans hover:bg-[#757373] transition-all'>
+            <button className='py-3 px-4 bg-[#d4d0d0]  text-black rounded-full font-sans hover:bg-[#757373] transition-all'>
               Contact Me
             </button>
           </a>

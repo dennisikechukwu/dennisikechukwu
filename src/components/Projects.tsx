@@ -43,6 +43,24 @@ const localProjects = [
   },
   {
     id: 5,
+    name: "Stellar",
+    desc: "An api security landing page",
+    description:
+      "Stellar is a landing page that  works on all devices, so you only have to set it up once.",
+    image: "/assets/stellar.png",
+    technology: "Next.js, Tailwind CSS",
+  },
+  {
+    id: 6,
+    name: "Breezy",
+    desc: "A weather app with live api.",
+    description:
+      "Breezy is a weather app that produces real time weather information for a specific location or area.",
+    image: "/assets/breezy.png",
+    technology: "React.js, CSS, Local Storage",
+  },
+  {
+    id: 7,
     name: "Task Master",
     desc: "A simple to-do app.",
     description:
@@ -75,8 +93,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="mt-3 bg-[#151414] p-7 rounded-lg">
-      <h1 className="px-5 py-2 text-xl text-[#eae6e6] font-serif">
+    <section id="projects" className="mt-3 bg-black p-7 rounded-lg">
+      <h1 className="px-5 py-2 text-2xl text-[#eae6e6] font-sans font-semibold">
         Live Projects
       </h1>
       <div className="flex flex-wrap justify-center">
@@ -89,11 +107,11 @@ const Projects = () => {
             <Image
               src={project.image || "/assets/default.png"}
               alt={project.name}
-              width={430}
+              width={450}
               height={600}
               className="h-52 max-sm:h-48 rounded-tl-md rounded-tr-md "
             />
-            <div className="p-3 bg-[#2d2b2b] rounded-bl-md rounded-br-md">
+            <div className="p-3 bg-[#0e0e0e] rounded-bl-md rounded-br-md">
               <h3 className="text-xl font-bold mt-2 text-[white] font-sans">
                 {project.name}
               </h3>
@@ -103,10 +121,10 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="px-4 lg:px-9 py-2 mt-4">
+      <div className="px-4 lg:px-9 py-2 mt-4 ">
         <button
           onClick={handleLoadToggle}
-          className="px-5 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#272626] transition"
+          className="px-5 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#272626] transition border border-[#a3a2a2]"
         >
           {expanded ? "Show Less" : "Load More"}
         </button>

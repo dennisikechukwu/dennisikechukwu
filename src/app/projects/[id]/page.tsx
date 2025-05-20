@@ -49,6 +49,27 @@ const localProjects = [
   },
   {
     id: 5,
+    name: "Stellar",
+    desc: "An api security landing page",
+    description:
+      "Stellar is a landing page that  works on all devices, so you only have to set it up once.",
+    image: "/assets/stellar.png",
+    technology: "Next.js, Tailwind CSS",
+    live_link: "https://stellar-beta-rust.vercel.app/",
+  },
+  {
+    id: 6,
+    name: "Breezy",
+    desc: "A weather app with live api.",
+    description:
+      "Breezy is a weather app that produces real time weather information for a specific location or area.",
+    image: "/assets/breezy.png",
+    technology: "React.js, CSS, Local Storage",
+     live_link: "https://breezy-three.vercel.app/",
+  },
+  
+  {
+    id: 7,
     name: "Task Master",
     desc: "A simple to-do app.",
     description:
@@ -85,10 +106,10 @@ const ProjectDetail = () => {
   return (
     <section className="max-w-5xl mx-auto">
       <Nav />
-      <div className="mt-3 bg-[#151414] p-7 rounded-md">
+      <div className="mt-3 bg-black p-7 rounded-md">
         <h1 className="text-center text-lg md:text-4xl text-[#cec9c9] font-semibold font-sans">{project.name}</h1>
-        <p className="text-center text-lg mt-4 text-[#cec9c9]">{project.desc}</p>
-        <div className="flex justify-center items-center mt-5 p-1 md:p-4 hover:border-[1.4px] rounded-md hover:border-[#737375] transition-all">
+        <p className="text-center font-sans text-lg mt-4 text-[#cec9c9]">{project.desc}</p>
+        <div className="flex justify-center items-center mt-5 p-1 md:p-4  rounded-md  transition-all">
           <Image
             src={project.image}
             alt={project.name}
@@ -97,16 +118,16 @@ const ProjectDetail = () => {
             className="w-full rounded-md md:h-[500px] max-sm:h-[230px]"
           />
         </div>
-        <div className="mt-5 bg-[#1A1A1A] p-7 rounded-md flex justify-between items-center flex-wrap max-sm:gap-5">
+        <div className="mt-5 bg-[#0e0e0e] p-7 rounded-md flex justify-between items-center flex-wrap max-sm:gap-5">
           <div className="flex flex-col gap-3">
             <p className=" text-white text-[20px]">Technologies Used</p>
             <p className="text-[#9b9595] text-lg">{project.technology}</p>
           </div>
           <div className="flex flex-col gap-3">
             <p className=" text-white text-[20px]">Link</p>
-            <a href={project.live_link}>
+            <a href={project.live_link} className="p-1 bg-[#0e0e0e] border-[#a3a2a2] border px-1.5 rounded-lg">
               <div className="flex justify-between items-center gap-2.5">
-                <p className="text-[#d1d1d1] text-lg hover:text-white transition-all">View Live</p>
+                <p className="text-white text-lg hover:text-white transition-all">View Live</p>
                 <MoveRight className="text-white font-semibold" />
               </div>
             </a>
@@ -118,13 +139,13 @@ const ProjectDetail = () => {
       </div>
 
       {/* More Projects Section */}
-      <div className="mt-3 rounded-lg bg-[#151414] p-4">
-        <h1 className="px-5 py-2 text-xl text-[#eae6e6] font-serif">More Projects</h1>
+      <div className="mt-3 rounded-lg bg-black p-4">
+        <h1 className="px-5 py-2 text-2xl text-[#eae6e6] font-sans">More Projects</h1>
         <div className="flex flex-wrap justify-center">
           {shuffle.map((proj) => (
             <Link key={proj.id} href={`/projects/${proj.id}`} className="p-4 text-white rounded-lg cursor-pointer">
               <Image src={proj.image} alt={proj.name} width={430} height={600} className="h-52 max-sm:h-48 rounded-tl-md rounded-tr-md" />
-              <div className="p-3 bg-[#2d2b2b] rounded-bl-md rounded-br-md">
+              <div className="p-3 bg-[#0e0e0e] rounded-bl-md rounded-br-md">
                 <h2 className="text-xl font-bold mt-2 text-[white] font-sans">{proj.name}</h2>
                 <p className="text-[white] font-sans mt-2">{proj.desc}</p>
               </div>
