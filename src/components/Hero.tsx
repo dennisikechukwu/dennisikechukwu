@@ -7,7 +7,7 @@ const Hero = () => {
       <div className='flex justify-between items-center'>
         <div className="group flex gap-3 md:gap-6 items-center">
           <Image
-            src="/assets/dennis.jpg"
+            src="/assets/denis.png"
             alt="description"
             width={180}
             height={180}
@@ -21,7 +21,7 @@ const Hero = () => {
               </div>
         </div>
         <div className='p-5 mt-2'>
-            <h2 className='md:text-5xl text-3xl bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text font-semibold font-sans'>Frontend <span className='font-sans'>Developer</span></h2>
+            <h2 className='md:text-5xl text-3xl bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text font-semibold font-sans'>Frontend <span className='font-sans'>Engineer</span></h2>
         </div>
         <div>
           <p className='px-5 py-3 text-[#dad9d9] text-lg font-sans'>Lagos, Nigeria.</p>

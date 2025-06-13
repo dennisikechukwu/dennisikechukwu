@@ -21,7 +21,7 @@ const About = () => {
 </p>
 
 <p className='mb-4 text-[#eae6e6] font-sans'>
-  I’m also a web developer skilled in React.js, Next.js, and Tailwind CSS. I create responsive, user-friendly interfaces that combine functionality with sleek design, focusing on performance and scalability.
+  I’m also a web developer skilled in React.js, Next.js, TypeScript and Tailwind CSS. I create responsive, user-friendly interfaces that combine functionality with sleek design, focusing on performance and scalability.
 </p>
 
 <p className='mb-4 text-[#eae6e6] font-sans'>
