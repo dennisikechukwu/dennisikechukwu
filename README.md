@@ -9,4 +9,4 @@ Currently, I’m expanding my skills into Back-End Development with Python and D
 
 * 🌍  I'm based in Lagos,Nigeria
 * 🖥️  See my portfolio at [PORTFOLIO](http://ikechukwudennis.vercel.app/)
-* ✉️  You can contact me at [Okwuchukwudennis001@gmail.com](mailto:Okwuchukwudennis001@gmail.com)
+* ✉️  You can contact me at [Okwuchukwudennis001@gmail.com](mailto:okwuchukwudennis001@gmail.com)
