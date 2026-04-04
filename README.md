@@ -6,7 +6,7 @@ Software Engineer
 Front-End Engineer specializing in:
 
 • React, Next.js, Vue.js/Nuxt.js, Tailwind CSS
-• Scalable production apps (CraftID, Betwixt)
+• Scalable production apps (CraftID, Betwixt, AgentCoach)
 • Modern, responsive, performant UIs
 
 Currently expanding: Python + Django → Full-Stack
