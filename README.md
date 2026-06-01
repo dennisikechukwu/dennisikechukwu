@@ -9,7 +9,7 @@ Front-End Engineer specializing in:
 • Scalable production apps (CraftID, Betwixt, AgentCoach, SONA)
 • Modern, responsive, performant UIs
 
-Currently expanding: Python + Django || JAVA → Full-Stack
+Currently expanding: JAVA → Full-Stack
 
 * 🌍  I'm based in Lagos,Nigeria
 * 🖥️  See my portfolio at [PORTFOLIO](http://ikechukwudennis.vercel.app/)
